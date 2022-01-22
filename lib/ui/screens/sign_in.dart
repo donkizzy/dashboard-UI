@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:dashboard_ui/ui/screens/dashboard.dart';
 import 'package:dashboard_ui/ui/utils/app_color.dart';
 import 'package:dashboard_ui/ui/utils/utils.dart';
+import 'package:dashboard_ui/ui/widgets/logo_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -24,18 +25,7 @@ class _SignInState extends State<SignIn> {
       body: ListView(
         padding: EdgeInsets.all(20),
         children: [
-
-      ValueListenableBuilder(
-      valueListenable: AdaptiveTheme.of(context).modeChangeNotifier,
-        builder: (BuildContext context, AdaptiveThemeMode value, Widget? child) {
-        return  Align(
-            alignment: Alignment.topLeft,
-            child: Image.asset(
-             value.isLight ? 'assets/logo.png' : 'assets/logo_dark.png',
-              height: 48,
-            )) ;
-        },
-    ),
+          LogoItem(),
           SizedBox(
             height: 30,
           ),

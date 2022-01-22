@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:dashboard_ui/ui/utils/app_color.dart';
 import 'package:dashboard_ui/ui/utils/utils.dart';
+import 'package:dashboard_ui/ui/widgets/custom_drawer.dart';
 import 'package:dashboard_ui/ui/widgets/product_item.dart';
 import 'package:dashboard_ui/ui/widgets/simple_bar_chart.dart';
 import 'package:dashboard_ui/ui/widgets/tips_item.dart';
@@ -19,9 +20,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).dividerColor,
-      drawer: Drawer(
-        child: Column(),
-      ),
+      drawer: CustomDrawer(),
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Theme.of(context).cardColor,
