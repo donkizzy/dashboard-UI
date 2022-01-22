@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:dashboard_ui/ui/utils/app_color.dart';
 import 'package:dashboard_ui/ui/utils/utils.dart';
+import 'package:dashboard_ui/ui/widgets/product_item.dart';
 import 'package:dashboard_ui/ui/widgets/simple_bar_chart.dart';
 import 'package:dashboard_ui/ui/widgets/tips_item.dart';
 import 'package:flutter/material.dart';
@@ -515,7 +516,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           SizedBox(height: 20,),
           Container(
-            height: height(context) / 1.8,
+            height: height(context) / 1.5,
             padding: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
@@ -555,6 +556,30 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 SizedBox(height: 20,),
                 Container(height: 1,decoration: BoxDecoration(color: Theme.of(context).dividerColor),),
+                SizedBox(height: 20,),
+                ProductItem(),
+                SizedBox(height: 20,),
+                ProductItem(),
+                SizedBox(height: 20,),
+                ProductItem(),
+                SizedBox(height: 20,),
+                ProductItem(),
+                SizedBox(height: 25,),
+                Container(
+                  height: 50,
+                  width: width(context),
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(color: Theme.of(context).dividerColor),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'All Products',
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                )
               ],
             ),
           )
