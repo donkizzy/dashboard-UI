@@ -1,6 +1,3 @@
-
-
-/// Bar chart example
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:dashboard_ui/ui/utils/app_color.dart';
 import 'package:dashboard_ui/ui/utils/utils.dart';
@@ -22,7 +19,7 @@ class SimpleBarChart extends StatelessWidget {
     ProductViews(
       day: 24,
       views: 20,
-      barColor: charts.ColorUtil.fromDartColor(mantisGreen),
+      barColor: charts.ColorUtil.fromDartColor(fringyFlower),
     ),
     ProductViews(
       day: 25,
