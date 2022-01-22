@@ -24,6 +24,8 @@ class MyApp extends StatelessWidget {
       light: ThemeData(
         brightness: Brightness.light,
         backgroundColor: alabasterWhite,
+        canvasColor: alabasterWhite,
+        cardColor: alabasterWhite,
         textTheme: TextTheme(
           headline1: TextStyle(
             color: sharkBlack,
@@ -35,6 +37,8 @@ class MyApp extends StatelessWidget {
       dark: ThemeData(
         brightness: Brightness.dark,
         backgroundColor: sharkBlack,
+          canvasColor: woodSmokeBlack,
+          cardColor: sharkBlack,
           textTheme: TextTheme(
             headline1: TextStyle(
               color: alabasterWhite,
