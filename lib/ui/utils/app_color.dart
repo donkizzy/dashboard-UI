@@ -16,3 +16,5 @@ const Color fetaGreen = Color(0xffEAFAE5);
 const Color persimmonOrange = Color(0xffFF6A55);
 const Color mantisGreen = Color(0xff83BF6E);
 const Color melrosePurple = Color(0xffCABDFF);
+const Color fringyFlower = Color(0xffB5E4CA);
+const Color frenchPass = Color(0xffB1E5FC);
