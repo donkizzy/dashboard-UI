@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:dashboard_ui/ui/utils/app_color.dart';
 import 'package:dashboard_ui/ui/utils/utils.dart';
 import 'package:dashboard_ui/ui/widgets/simple_bar_chart.dart';
+import 'package:dashboard_ui/ui/widgets/tips_item.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -16,7 +17,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).canvasColor,
+      backgroundColor: Theme.of(context).dividerColor,
       drawer: Drawer(
         child: Column(),
       ),
@@ -36,9 +37,14 @@ class _DashboardState extends State<Dashboard> {
       body: ListView(
         padding: EdgeInsets.all(20),
         children: [
-          Text(
-            'Dashboard',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+          InkWell(
+            onTap: (){
+              AdaptiveTheme.of(context).toggleThemeMode();
+            },
+            child: Text(
+              'Dashboard',
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+            ),
           ),
           SizedBox(
             height: 20,
@@ -96,7 +102,7 @@ class _DashboardState extends State<Dashboard> {
                   width: width(context),
                   padding: EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).canvasColor,
+                    color: Theme.of(context).dividerColor,
                     borderRadius: BorderRadius.circular(20)
                   ),
                   child: Row(
@@ -113,7 +119,7 @@ class _DashboardState extends State<Dashboard> {
                             height: 136,
                             padding: EdgeInsets.all(20),
                             decoration: BoxDecoration(
-                              color: viewType ? Theme.of(context).cardColor : Theme.of(context).canvasColor,
+                              color: viewType ? Theme.of(context).cardColor : Theme.of(context).dividerColor,
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Column(
@@ -160,7 +166,7 @@ class _DashboardState extends State<Dashboard> {
                             height: 136,
                             padding: EdgeInsets.all(20),
                             decoration: BoxDecoration(
-                              color: !viewType ? Theme.of(context).cardColor : Theme.of(context).canvasColor,
+                              color: !viewType ? Theme.of(context).cardColor : Theme.of(context).dividerColor,
                               borderRadius: BorderRadius.circular(12)
                             ),
                             child: Column(
@@ -250,7 +256,7 @@ class _DashboardState extends State<Dashboard> {
                           radius: 30,
                         ),
                         SizedBox(height: 20,),
-                        Text('Gladyce')
+                        Text('Gladyce',style: TextStyle(fontWeight: FontWeight.w500))
                       ],
                     ),
                     Column(
@@ -260,18 +266,18 @@ class _DashboardState extends State<Dashboard> {
                           radius: 30,
                         ),
                         SizedBox(height: 20,),
-                        Text('Elbert')
+                        Text('Elbert',style: TextStyle(fontWeight: FontWeight.w500))
                       ],
                     ),
                     Column(
                       children: [
                         CircleAvatar(
-                          backgroundColor: Theme.of(context).canvasColor ,
+                          backgroundColor: Theme.of(context).dividerColor ,
                           child: Icon(Icons.arrow_forward,color: greyChateau,),
                           radius: 30,
                         ),
                         SizedBox(height: 20,),
-                        Text('View All')
+                        Text('View All',style: TextStyle(fontWeight: FontWeight.w700),)
                       ],
                     ),
                   ],
@@ -283,7 +289,7 @@ class _DashboardState extends State<Dashboard> {
             height: 20,
           ),
           Container(
-              height: height(context) / 1.5,
+              height: height(context) / 1.8,
               padding: EdgeInsets.all(20.0),
               decoration: BoxDecoration(
                   color: Theme.of(context).cardColor,
@@ -334,6 +340,223 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
 
+          ),
+          SizedBox(height: 20,),
+          Container(
+        height: height(context) / 1.3,
+        padding: EdgeInsets.all(20.0),
+        decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(8)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 16,
+                  height: 32,
+                  decoration: BoxDecoration(
+                      color: fringyFlower,
+                      borderRadius: BorderRadius.circular(4.0)
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Text(
+                  'Pro Tips',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(width: 10,),
+              ],
+            ),
+            SizedBox(height: 20,),
+            Text('Need some ideas for the next product?',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600,color: greyChateau),),
+            SizedBox(height: 20,),
+            TipsItemState(title: 'Early Access', subtitle1: 'New',subtitle2: '3 mins read',image: 'assets/event.png',),
+            SizedBox(height: 20,),
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Theme.of(context).dividerColor ,
+                  child: Icon(Icons.arrow_forward,color: greyChateau,),
+                  radius: 30,
+                ),
+                SizedBox(width: 20,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Early Access',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          child: Text('New',style: TextStyle(color: sharkBlack,fontWeight: FontWeight.w700,fontSize: 12),),
+                          padding: EdgeInsets.all(5.0),
+                          margin: EdgeInsets.only(top: 10),
+                          decoration: BoxDecoration(
+                              color: melrosePurple,
+                              borderRadius: BorderRadius.circular(8)
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        Container(
+                          padding: EdgeInsets.all(5.0),
+                          margin: EdgeInsets.only(top: 10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: Theme.of(context).dividerColor),
+                          ),
+                          child: Row(
+                            children: [
+                              Image.asset('assets/avatar2.png',height: 10,),
+                              SizedBox(width: 5,),
+                              Text('3 mins read',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w600),)
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: 20,),
+            TipsItemState(title: 'Early Access', subtitle1: 'New',subtitle2: '3 mins read',image: 'assets/event.png',),
+            SizedBox(height: 20,),
+            TipsItemState(title: 'Early Access', subtitle1: 'New',subtitle2: '3 mins read',image: 'assets/event.png',),
+            SizedBox(height: 20,),
+            TipsItemState(title: 'Early Access', subtitle1: 'New',subtitle2: '3 mins read',image: 'assets/event.png',),
+            SizedBox(height: 20,),
+            TipsItemState(title: 'Early Access', subtitle1: 'New',subtitle2: '3 mins read',image: 'assets/event.png',),
+          ],
+        ),
+      ),
+          SizedBox(height: 20,),
+          Container(
+            height: height(context) / 3,
+            padding: EdgeInsets.all(20.0),
+            decoration: BoxDecoration(
+                color: Theme.of(context).cardColor,
+                borderRadius: BorderRadius.circular(8)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: 16,
+                      height: 32,
+                      decoration: BoxDecoration(
+                          color: frenchPass,
+                          borderRadius: BorderRadius.circular(4.0)
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Text(
+                      'Get more customers!',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20,),
+                Text('50% of new customers explore products because the author sharing the work on the social media network. Gain your earnings right now! 🔥',style: TextStyle(
+                  color: greyChateau,
+                  fontSize: 15
+                ),),
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Container(
+                        height: 40,
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Theme.of(context).dividerColor),
+                        ),
+                        child: Image.asset('assets/facebook.png'),
+                      ),
+                    ),
+                    SizedBox(width: 10.0,),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Container(
+                        height: 40,
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Theme.of(context).dividerColor),
+                        ),
+                        child: Image.asset('assets/twitter.png'),
+                      ),
+                    ),
+                    SizedBox(width: 10.0,),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Container(
+                        height: 40,
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Theme.of(context).dividerColor),
+                        ),
+                        child: Image.asset('assets/instagram.png'),
+                      ),
+                    ),
+
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 20,),
+          Container(
+            height: height(context) / 1.8,
+            padding: EdgeInsets.all(20.0),
+            decoration: BoxDecoration(
+                color: Theme.of(context).cardColor,
+                borderRadius: BorderRadius.circular(8)),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: 16,
+                      height: 32,
+                      decoration: BoxDecoration(
+                          color: frenchPass,
+                          borderRadius: BorderRadius.circular(4.0)
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Text(
+                      'Popular products',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Products',style: TextStyle(
+                        color: greyChateau,
+                        fontSize: 13
+                    )),
+                    Text('Earnings',style: TextStyle(
+                        color: greyChateau,
+                        fontSize: 13
+                    )),
+                  ],
+                ),
+                SizedBox(height: 20,),
+                Container(height: 1,decoration: BoxDecoration(color: Theme.of(context).dividerColor),),
+              ],
+            ),
           )
         ],
       ),
