@@ -463,7 +463,8 @@ class _DashboardState extends State<Dashboard> {
                 SizedBox(height: 20,),
                 Text('50% of new customers explore products because the author sharing the work on the social media network. Gain your earnings right now! 🔥',style: TextStyle(
                   color: greyChateau,
-                  fontSize: 15
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500
                 ),),
                 SizedBox(height: 20,),
                 Row(
