@@ -50,7 +50,6 @@ class _DashboardState extends State<Dashboard> {
             height: 20,
           ),
           Container(
-            height: height(context) / 1.8,
             padding: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
@@ -109,6 +108,7 @@ class _DashboardState extends State<Dashboard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Flexible(
+                        fit: FlexFit.tight,
                         child: InkWell(
                           onTap:(){
                             setState(() {
@@ -124,6 +124,7 @@ class _DashboardState extends State<Dashboard> {
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('Customers',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600,color: greyChateau),),
                                 Text('254k',style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,),),
@@ -156,6 +157,7 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       Flexible(
+                        fit: FlexFit.tight,
                         child: InkWell(
                           onTap: (){
                             setState(() {
@@ -170,6 +172,7 @@ class _DashboardState extends State<Dashboard> {
                               borderRadius: BorderRadius.circular(12)
                             ),
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('Income',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600,color: greyChateau),),
                                 Text('254k',style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,),),
@@ -289,7 +292,6 @@ class _DashboardState extends State<Dashboard> {
             height: 20,
           ),
           Container(
-              height: height(context) / 1.8,
               padding: EdgeInsets.all(20.0),
               decoration: BoxDecoration(
                   color: Theme.of(context).cardColor,
@@ -343,7 +345,6 @@ class _DashboardState extends State<Dashboard> {
           ),
           SizedBox(height: 20,),
           Container(
-        height: height(context) / 1.3,
         padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
@@ -435,7 +436,6 @@ class _DashboardState extends State<Dashboard> {
       ),
           SizedBox(height: 20,),
           Container(
-            height: height(context) / 3,
             padding: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
@@ -476,9 +476,9 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Theme.of(context).dividerColor),
+                          border: Border.all(color: Theme.of(context).dividerColor,width: 2),
                         ),
-                        child: Image.asset('assets/facebook.png'),
+                        child: Image.asset('assets/facebook.png',height: 20,),
                       ),
                     ),
                     SizedBox(width: 10.0,),
@@ -489,9 +489,9 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Theme.of(context).dividerColor),
+                          border: Border.all(color: Theme.of(context).dividerColor,width: 2),
                         ),
-                        child: Image.asset('assets/twitter.png'),
+                        child: Image.asset('assets/twitter.png',height: 20,),
                       ),
                     ),
                     SizedBox(width: 10.0,),
@@ -502,9 +502,9 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Theme.of(context).dividerColor),
+                          border: Border.all(color: Theme.of(context).dividerColor,width: 2),
                         ),
-                        child: Image.asset('assets/instagram.png'),
+                        child: Image.asset('assets/instagram.png',height: 20,),
                       ),
                     ),
 
@@ -515,7 +515,6 @@ class _DashboardState extends State<Dashboard> {
           ),
           SizedBox(height: 20,),
           Container(
-            height: height(context) / 1.5,
             padding: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
@@ -570,7 +569,7 @@ class _DashboardState extends State<Dashboard> {
                   padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: Theme.of(context).dividerColor),
+                    border: Border.all(color: Theme.of(context).dividerColor,width: 2),
                   ),
                   child: Center(
                     child: Text(

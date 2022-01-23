@@ -131,56 +131,61 @@ class CustomDrawer extends StatelessWidget {
                     builder: (BuildContext context, AdaptiveThemeMode value, Widget? child) {
                       return Container(
                         height: 45,
-                        width: width(context),
-                        padding: EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(5.0),
                         decoration: BoxDecoration(
                             color: Theme.of(context).dividerColor,
                             borderRadius: BorderRadius.circular(40)
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            InkWell(
-                              onTap:(){
-                                AdaptiveTheme.of(context).setLight();
-                              },
-                              child: Container(
-                                height: 35,
-                                width: width(context) / 3.2 ,
-                                 padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: value.isLight ? Theme.of(context).cardColor : Theme.of(context).dividerColor,
-                                  borderRadius: BorderRadius.circular(32),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(Icons.light_mode,size: 15,color: value.isLight ? sharkBlack : paleSkyGrey,),
-                                    SizedBox(width: 5.0,),
-                                    Text('Light',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: value.isLight ? sharkBlack : paleSkyGrey),),
-                                  ],
+                            Flexible(
+                              fit:FlexFit.tight,
+                              child: InkWell(
+                                onTap:(){
+                                  AdaptiveTheme.of(context).setLight();
+                                },
+                                child: Container(
+                                  height: 35,
+                                  width: width(context) / 4,
+                                   padding: EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                    color: value.isLight ? Theme.of(context).cardColor : Theme.of(context).dividerColor,
+                                    borderRadius: BorderRadius.circular(32),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.light_mode,size: 15,color: value.isLight ? sharkBlack : paleSkyGrey,),
+                                      SizedBox(width: 5.0,),
+                                      Text('Light',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: value.isLight ? sharkBlack : paleSkyGrey),),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                            InkWell(
-                              onTap: (){
-                                AdaptiveTheme.of(context).setDark();
-                              },
-                              child: Container(
-                                height: 32,
-                                width: width(context) / 3.2,
-                                // padding: EdgeInsets.all(20),
-                                decoration: BoxDecoration(
-                                    color: !value.isLight ? Theme.of(context).cardColor : Theme.of(context).dividerColor,
-                                    borderRadius: BorderRadius.circular(32)
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(Icons.nightlight_outlined,size: 15,color: value.isLight ? paleSkyGrey : alabasterWhite, ),
-                                    SizedBox(width: 5.0,),
-                                    Text('Dark',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: value.isLight ? paleSkyGrey : alabasterWhite),),
-                                  ],
+                            Flexible(
+                              fit:FlexFit.tight,
+                              child: InkWell(
+                                onTap: (){
+                                  AdaptiveTheme.of(context).setDark();
+                                },
+                                child: Container(
+                                  height: 32,
+                                  width: width(context) / 4,
+                                  // padding: EdgeInsets.all(20),
+                                  decoration: BoxDecoration(
+                                      color: !value.isLight ? Theme.of(context).cardColor : Theme.of(context).dividerColor,
+                                      borderRadius: BorderRadius.circular(32)
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.nightlight_outlined,size: 15,color: value.isLight ? paleSkyGrey : alabasterWhite, ),
+                                      SizedBox(width: 5.0,),
+                                      Text('Dark',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: value.isLight ? paleSkyGrey : alabasterWhite),),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -189,6 +194,7 @@ class CustomDrawer extends StatelessWidget {
                       ) ;
                     },
                   ),
+                  SizedBox(height: 20,),
                 ],
               )
             ],
